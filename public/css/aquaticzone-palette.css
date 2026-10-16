@@ -1,0 +1,425 @@
+/* =====================================================================
+   AquaticZone - Deep Ocean Palette
+   ---------------------------------------------------------------
+   Surface besar (kartu, sidebar) memakai warna GELAP agar tidak pucat.
+   Tombol & badge tetap TERANG supaya tetap "pop" di atas putih.
+
+   Deep Ocean     #0B4F4F  PRIMARY   sidebar, navbar, tombol utama
+   Deep Aqua       #0E7490  INFO      kartu statistik, badge tema
+   Deep Emerald    #047857  SUCCESS   garansi AKTIF, status aman
+   Sand Amber     #F59E0B  WARNING   edit, peringatan   (terang)
+   Coral Rose     #F43F5E  DANGER    hapus, pembatalan  (terang)
+   Teal Bright    #2DD4BF  aksen     strip, border, hover
+
+   Dimuat SETELAH style.css / bootstrap agar menimpa template.
+   ===================================================================== */
+
+:root {
+  /* utama (gelap - untuk bidang besar) */
+  --az-primary: #0B4F4F;      /* Deep Ocean  */
+  --az-success: #047857;      /* Deep Emerald*/
+  --az-info:    #0E7490;      /* Deep Aqua   */
+
+  /* aksen (terang - untuk tombol/badge kecil) */
+  --az-warning: #F59E0B;      /* Sand Amber  */
+  --az-danger:  #F43F5E;      /* Coral Rose  */
+  --az-accent:  #2DD4BF;      /* Teal Bright */
+
+  /* hover / aktif */
+  --az-primary-light: #0E6460;
+  --az-primary-dark:  #073B3B;
+  --az-info-light:    #22D3EE;
+  --az-info-dark:     #0A5B72;
+  --az-success-dark:  #035B41;
+  --az-danger-dark:   #E11D48;
+  --az-warning-dark:  #D97706;
+}
+
+/* ---------------------------------------------------------------- */
+/* 1. Tombol                                                         */
+/* ---------------------------------------------------------------- */
+.btn-primary {
+  background-color: var(--az-primary) !important;
+  border-color: var(--az-primary) !important;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--az-primary-dark) !important;
+  border-color: var(--az-primary-dark) !important;
+}
+
+.btn-success {
+  background-color: var(--az-success) !important;
+  border-color: var(--az-success) !important;
+  color: #fff !important;
+}
+.btn-success:hover { background-color: var(--az-success-dark) !important; }
+
+.btn-info {
+  background-color: var(--az-info) !important;
+  border-color: var(--az-info) !important;
+  color: #fff !important;
+}
+
+.btn-warning {
+  background-color: var(--az-warning) !important;
+  border-color: var(--az-warning) !important;
+  color: #3b2500 !important;          /* teks gelap di atas amber */
+}
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: var(--az-warning-dark) !important;
+  border-color: var(--az-warning-dark) !important;
+}
+
+.btn-danger {
+  background-color: var(--az-danger) !important;
+  border-color: var(--az-danger) !important;
+  color: #fff !important;
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: var(--az-danger-dark) !important;
+  border-color: var(--az-danger-dark) !important;
+}
+
+.btn-secondary {
+  background-color: #64748B !important;
+  border-color: #64748B !important;
+  color: #fff !important;
+}
+.btn-secondary:hover { background-color: #475569 !important; }
+
+/* ---------------------------------------------------------------- */
+/* 2. Badge status                                                  */
+/* ---------------------------------------------------------------- */
+.badge-success { background-color: var(--az-success) !important; color: #fff !important; }
+.badge-info    { background-color: var(--az-info)    !important; color: #fff !important; }
+.badge-warning { background-color: var(--az-warning) !important; color: #3b2500 !important; }
+.badge-danger  { background-color: var(--az-danger)  !important; color: #fff !important; }
+
+/* ---------------------------------------------------------------- */
+/* 3. Kartu statistik - GRADASI supaya tidak terlihat datar/pucat    */
+/* ---------------------------------------------------------------- */
+.card.card-tale {                 /* Total Aquascape Dikelola -> DEEP AQUA */
+  background: linear-gradient(135deg, #0A5F72 0%, #0E7490 55%, #1195B4 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(14, 116, 144, .28);
+}
+.card.card-tale:hover {
+  background: linear-gradient(135deg, #0E7490 0%, #1195B4 100%) !important;
+}
+
+.card.card-dark-blue {            /* Garansi Aktif -> DEEP EMERALD */
+  background: linear-gradient(135deg, #03543C 0%, #047857 55%, #06A06F 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(4, 120, 87, .28);
+}
+.card.card-dark-blue:hover {
+  background: linear-gradient(135deg, #047857 0%, #06A06F 100%) !important;
+}
+
+/* ---------------------------------------------------------------- */
+/* 4. Navbar & sidebar                                               */
+/* ---------------------------------------------------------------- */
+.navbar .navbar-brand-wrapper .navbar-brand,
+.navbar .navbar-brand-wrapper .brand-logo-mini {
+  color: var(--az-primary) !important;
+}
+
+.sidebar .nav .nav-item.active > .nav-link {
+  background: linear-gradient(135deg, #0B4F4F 0%, #0E6460 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(11, 79, 79, .35);
+}
+.sidebar .nav .nav-item > .nav-link:hover { color: var(--az-accent) !important; }
+.sidebar .nav .nav-item .nav-link i.menu-icon { color: inherit; }
+
+a.navbar-brand, a.navbar-brand:hover, a.navbar-brand:focus {
+  color: var(--az-primary) !important;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------- */
+/* 5. Header form (create & edit)                                    */
+/* ---------------------------------------------------------------- */
+.bg-primary { background-color: var(--az-primary) !important; }
+.bg-warning { background-color: var(--az-warning) !important; }
+.bg-danger  { background-color: var(--az-danger)  !important; }
+
+/* ---------------------------------------------------------------- */
+/* 6. Fokus keyboard                                                 */
+/* ---------------------------------------------------------------- */
+.btn-primary:focus-visible,
+.btn-warning:focus-visible,
+.btn-danger:focus-visible {
+  outline: 3px solid var(--az-info-light);
+  outline-offset: 2px;
+}
+
+/* ================================================================== */
+/* 7. HALAMAN LOGIN                                                   */
+/* ================================================================== */
+
+.az-login-body {
+  min-height: 100vh;
+  margin: 0;
+  background: #F4F7F9;
+  font-family: inherit;
+}
+
+.az-login-wrap {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+/* --- Panel kiri (brand) --- */
+.az-login-brand {
+  flex: 0 0 46%;
+  max-width: 46%;
+  height: auto;            /* biarkan flex-stretch yang mengisi tinggi */
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(34, 211, 238, .22) 0%, transparent 55%),
+    linear-gradient(155deg, #062F30 0%, #0B4F4F 45%, #0E6E7A 100%);
+  color: #fff;
+  padding: 0 !important;
+}
+
+.az-login-brand .col-12 { padding: 3.2rem 3.4rem; }
+
+.az-login-logo {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: .4px;
+  margin-bottom: .35rem;
+}
+.az-login-logo i { color: var(--az-accent); }
+
+.az-login-tagline {
+  font-size: .93rem;
+  color: rgba(255, 255, 255, .72);
+  max-width: 26rem;
+  line-height: 1.6;
+}
+
+.az-login-features { display: flex; flex-direction: column; gap: 1.15rem; }
+
+.az-login-feature {
+  display: flex;
+  gap: .95rem;
+  align-items: flex-start;
+}
+.az-login-feature > i {
+  flex: 0 0 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+  border-radius: 12px;
+  background: rgba(45, 212, 191, .16);
+  border: 1px solid rgba(45, 212, 191, .34);
+  color: var(--az-accent);
+}
+.az-login-feature strong {
+  display: block;
+  font-size: .92rem;
+  font-weight: 700;
+  color: #fff;
+}
+.az-login-feature span {
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .62);
+}
+
+.az-login-copy {
+  font-size: .76rem;
+  color: rgba(255, 255, 255, .45);
+  margin: 0;
+}
+
+/* --- Panel kanan (form) --- */
+.az-login-form-wrap {
+  flex: 1 1 54%;
+  max-width: 54%;
+  height: auto;
+  min-height: 100vh;
+}
+.az-login-form-wrap .col-12 { padding: 2.5rem 1.75rem; }
+
+.az-login-card {
+  width: 100%;
+  max-width: 430px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 2.5rem 2.35rem 1.9rem;
+  box-shadow: 0 18px 46px rgba(11, 79, 79, .13);
+  border: 1px solid #E2EDF0;
+}
+
+.az-login-mark {
+  font-size: 2.4rem;
+  color: var(--az-primary);
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.az-login-title {
+  font-size: 1.32rem;
+  font-weight: 800;
+  color: #0F2E34;
+  margin-bottom: .25rem;
+}
+
+.az-login-sub {
+  font-size: .84rem;
+  color: #6E8A92;
+  margin: 0;
+}
+
+/* input */
+.az-field { margin-bottom: 1.05rem; }
+.az-field > label {
+  display: block;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #33565D;
+  margin-bottom: .4rem;
+}
+
+.az-input { position: relative; }
+.az-input > i {
+  position: absolute;
+  left: .95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8FAAB2;
+  font-size: .95rem;
+  pointer-events: none;
+  z-index: 2;
+}
+.az-input .form-control {
+  width: 100%;
+  height: 46px;
+  padding: 0 1rem 0 2.6rem;
+  font-size: .88rem;
+  color: #16343A;
+  background: #F7FAFB;
+  border: 1px solid #DCE8EC;
+  border-radius: 10px;
+  transition: border-color .18s, box-shadow .18s, background .18s;
+}
+.az-input .form-control::placeholder { color: #A8BCC2; }
+.az-input .form-control:focus {
+  background: #fff;
+  border-color: var(--az-primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, .13);
+  outline: none;
+}
+
+.az-check .form-check-input { border-color: #C4D6DB; }
+.az-check .form-check-input:checked { background-color: var(--az-primary); border-color: var(--az-primary); }
+.az-check .form-check-label { font-size: .82rem; color: #55747B; }
+
+.az-link {
+  font-size: .82rem;
+  color: var(--az-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.az-link:hover { color: var(--az-primary-dark); text-decoration: underline; }
+
+.az-btn-login {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0B4F4F 0%, #0E6460 60%, #0E7490 100%);
+  color: #fff;
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(11, 79, 79, .30);
+  transition: transform .15s, box-shadow .15s, filter .15s;
+}
+.az-btn-login:hover  { filter: brightness(1.12); box-shadow: 0 10px 24px rgba(11, 79, 79, .38); }
+.az-btn-login:active { transform: translateY(1px); }
+.az-btn-login i { margin-right: .35rem; }
+
+/* alert */
+.az-alert {
+  display: flex;
+  gap: .6rem;
+  align-items: flex-start;
+  font-size: .82rem;
+  padding: .7rem .9rem;
+  border-radius: 9px;
+  margin-bottom: 1.1rem;
+  line-height: 1.45;
+}
+.az-alert i { flex: 0 0 auto; margin-top: 1px; }
+.az-alert-danger {
+  background: #FFECF0;
+  border: 1px solid #F9C2CE;
+  color: #9F1239;
+}
+.az-alert-success {
+  background: #E7F7F1;
+  border: 1px solid #B4E3D1;
+  color: #03543C;
+}
+
+.az-hint {
+  text-align: center;
+  font-size: .76rem;
+  color: #7A949B;
+  margin: 1.35rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px dashed #DCE8EC;
+}
+.az-hint code {
+  color: var(--az-primary);
+  background: #EEF6F6;
+  padding: .1rem .38rem;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+/* responsif */
+@media (max-width: 991.98px) {
+  .az-login-wrap { flex-direction: column; }
+  .az-login-brand,
+  .az-login-form-wrap { flex: 0 0 100%; max-width: 100%; min-height: auto; }
+  .az-login-brand .col-12 { padding: 2rem 1.6rem; }
+  .az-login-features,
+  .az-login-copy { display: none; }
+  .az-login-tagline { margin-bottom: 0; }
+  .az-login-card { margin: 1.5rem auto; }
+}
+
+/* ---------------------------------------------------------------- */
+/* 8. Dropdown user di navbar                                       */
+/* ---------------------------------------------------------------- */
+.az-userbox {
+  border-bottom: 1px solid #E6EEF0;
+  margin-bottom: .35rem;
+}
+.az-userbox-name {
+  font-size: .86rem;
+  font-weight: 700;
+  color: #0F2E34;
+}
+.az-userbox-role {
+  font-size: .74rem;
+  color: var(--az-primary);
+  font-weight: 600;
+}
+.dropdown-menu .dropdown-item { font-size: .85rem; color: #33565D; }
+.dropdown-menu .dropdown-item:hover { color: var(--az-primary); background: #EFF6F6; }

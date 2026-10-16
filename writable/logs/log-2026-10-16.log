@@ -1,0 +1,55 @@
+ERROR - 2026-10-16 00:15:42 --> Table 'db_aquaticzone.pengguna' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 294.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(294): mysqli->query('
+                INSERT IGNORE INTO pengguna (nama_lengkap, username, password_hash, role)
+                VALUES (\'Administrator AquaticZone\', \'admin\', \'$2y$10$XaDEo6XCDWSElNLh8.ihpOf1/RT1BOrcUsxW8OJRStYmcMVuzYi66\', \'Administrator\')
+            ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(905): CodeIgniter\Database\MySQLi\Connection->execute('
+                INSERT IGNORE INTO pengguna (nama_lengkap, username, password_hash, role)
+                VALUES (\'Administrator AquaticZone\', \'admin\', \'$2y$10$XaDEo6XCDWSElNLh8.ihpOf1/RT1BOrcUsxW8OJRStYmcMVuzYi66\', \'Administrator\')
+            ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(822): CodeIgniter\Database\BaseConnection->simpleQuery('
+                INSERT IGNORE INTO pengguna (nama_lengkap, username, password_hash, role)
+                VALUES (\'Administrator AquaticZone\', \'admin\', \'$2y$10$XaDEo6XCDWSElNLh8.ihpOf1/RT1BOrcUsxW8OJRStYmcMVuzYi66\', \'Administrator\')
+            ')
+ 4 APPPATH\Database\Seeds\PenggunaSeeder.php(30): CodeIgniter\Database\BaseConnection->query('
+                INSERT IGNORE INTO pengguna (nama_lengkap, username, password_hash, role)
+                VALUES (?, ?, ?, ?)
+            ', [...])
+ 5 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PenggunaSeeder->run()
+ 6 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PenggunaSeeder')
+ 7 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 8 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 9 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-10-16 00:16:36 --> Error: Class "App\Filters\AuthFilter" not found
+[Method: GET, Route: aquascape]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\AuthFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\Filters\Filters->run('aquascape', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-16 00:16:40 --> Error: Class "App\Filters\AuthFilter" not found
+[Method: GET, Route: aquascape]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\AuthFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\Filters\Filters->run('aquascape', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-16 00:17:21 --> Error: Class "App\Filters\AuthFilter" not found
+[Method: GET, Route: aquascape/create]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\AuthFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\Filters\Filters->run('aquascape/create', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
